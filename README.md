@@ -1,0 +1,2 @@
+# metaratings-test
+Тестовое задание
