@@ -1,0 +1,25 @@
+header.header
+	.header__container
+		button.mobile-menu-toggle(type="button")
+			+icon("menu")
+		.header__logo
+			a.header__logo-link(href="/")
+				img(src="img/logo.svg" alt="logo")
+		a.header__mobile-account(href="#")
+			+icon("user")
+		nav.header__menu
+			ul.top-menu
+				li.top-menu__item: a.top-menu__item-link(href="#") Рейтинг букмекеров
+				li.top-menu__item: a.top-menu__item-link(href="#") Прогнозы
+				li.top-menu__item: a.top-menu__item-link(href="#") Бонусы
+				li.top-menu__item: a.top-menu__item-link(href="#") Новости
+				li.top-menu__item: a.top-menu__item-link(href="#") Статьи
+				li.top-menu__item.top-menu__item--additional.js-additional-menu
+					a.top-menu__item-link(href="#")
+						+icon("menu")
+						|Еще 4
+					ul.top-menu__submenu
+						li.top-menu__submenu-item: a.top-menu__submenu-link(href="#") Статьи
+						li.top-menu__submenu-item: a.top-menu__submenu-link(href="#") Ставки на спорт
+						li.top-menu__submenu-item: a.top-menu__submenu-link(href="#") Школа беттинга
+						li.top-menu__submenu-item: a.top-menu__submenu-link(href="#") Матч-центр

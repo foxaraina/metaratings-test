@@ -1,0 +1,25 @@
+mixin icon(name,mod)
+  - mod = mod || ''
+  svg(class="icon icon-" + name + ' ' + mod)
+      use(xlink:href="img/sprites/sprite.svg#" + name)
+  //- +icon('instagram', 'instagram')
+mixin breadcrumbs(items, last)
+  .breadcrumbs
+    ul.breadcrumbs__list&attributes(attributes)
+      each item in items
+        li.breadcrumbs__item
+          a.breadcrumbs__item-link(href="#")= item
+      if last
+        li.breadcrumbs__item= last
+mixin picture(src, ext)
+  picture
+    source(data-srcset='img/' + src + '.' + ext + ' 1x, ' + 'img/' + src + '@2x.' + ext + ' 2x ' type="image/png")
+    source(data-srcset='img/' + src + '.webp' + ' 1x, ' + 'img/' + src + '@2x.webp' + ' 2x ' type="image/webp")
+    img.lazyload(src='img/' + src + '.' + ext srcset='img/' + src + '@low.' + ext alt='image')
+mixin pictureMobile(src, ext)
+  picture
+    source(data-srcset='img/' + src + '-sm.webp' + ' 1x, ' + 'img/' + src + '-sm@2x.webp' + ' 2x ' type="image/webp" media="(max-width: 620px)")
+    source(data-srcset='img/' + src + '-sm.' + ext + ' 1x, ' + 'img/' + src + '-sm@2x.' + ext + ' 2x ' media="(max-width: 620px)")
+    source(data-srcset='img/' + src + '.webp' + ' 1x, ' + 'img/' + src + '@2x.webp' + ' 2x ' type="image/webp")
+    source(data-srcset='img/' + src + '.' + ext + ' 1x, ' + 'img/' + src + '@2x.' + ext + ' 2x ' type="image/png")
+    img.lazyload(src='img/' + src + '.' + ext srcset='img/' + src + '@low.' + ext alt='image')

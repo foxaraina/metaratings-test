@@ -1,0 +1,32 @@
+.breadcrumbs {
+  margin-top: 30px;
+  @include mq("tablet-small", "max") {
+    display: none;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    font-size: rem(14);
+    color: $black;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+    &-link {
+      display: inline-block;
+      position: relative;
+      color: inherit;
+      transition: .3s ease-in-out;
+      &:hover {
+        color: $secondary-color;
+      }
+      &:after {
+        content: "/";
+        position: absolute;
+        top: 0;
+        right: -12px;
+        color: $secondary-color;
+      }
+    }
+  }
+}

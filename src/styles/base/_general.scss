@@ -1,0 +1,133 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+body, html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 320px;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-base;
+  font-size: rem(16);
+  color: $black;
+  background-color: #e5e5e5;
+}
+h1, h2, h3, h4, h5, h6, ul, menu {
+  margin: 0;
+  padding: 0;
+}
+ul, li, menu {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+a, button {
+  transition: .3s ease 0s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+picture {
+  display: block;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  &.lazyload {
+    width: 100%;
+    filter: blur(5px);
+  }
+}
+p {
+  font-size: rem(20);
+  line-height: rem(34);
+  margin-top: 0;
+  margin-bottom: 34px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  @include mq("tablet", "max") {
+    font-size: rem(18);
+    line-height: rem(30);
+  }
+}
+.violet-text {
+  color: $primary-color;
+}
+.green-text {
+  color: $secondary-color;
+}
+.text-center {
+  text-align: center;
+}
+.inner-page {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  @include mq("tablet-small", "max") {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 950px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-button-next {
+  right: -12px;
+}
+
+.swiper-button-prev {
+  left: -12px;
+  .icon {
+    transform: rotate(180deg);
+  }
+}
+.swiper-button-next, .swiper-button-prev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #c4c4c4;
+  border-radius: 50%;
+  font-size: 10px;
+  background: $white;
+  transform: translateY(-50%);
+  transition: .3s ease-in-out;
+  .icon {
+    fill: #1d2d4a;
+    transition: .3s ease-in-out;
+  }
+  &:hover {
+    border-color: $primary-color;
+    .icon {
+      fill: $primary-color;
+    }
+  }
+  @media(max-width: 960px) {
+    display: none;
+  }
+}
+.swiper-button-disabled {
+  opacity: 0;
+}

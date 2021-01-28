@@ -1,0 +1,186 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "Metaratings О нас (тестовое задание)"
+
+block content
+	include modules/header
+	main.inner-page
+		.container
+			+breadcrumbs(["Главная"], "О нас")
+			.top-content
+				h1.page-title.text-center.
+					Мы - #[span.violet-text Metaratings]
+				.top-content__img
+					img(src="img/top-content-img.svg" alt="picture")
+				.top-content__txt
+					p.
+						Спортивная редакция Metaratings – это команда журналистов,
+						любящих свое дело и разбирающихся в нем досконально.
+						Это самые интересные новости, статьи и интервью с самыми яркими спикерами,
+						а также инсайды и эксклюзивы из мира спорта.
+			.block-card.
+				Metaratings – один из самых быстрорастущих спортивных сайтов
+				с охватом аудитории более #[span.green-text 100&nbsp;миллионов человек.]
+			.inner-content
+				.inner-content__row.inner-content__row--mobile-reverse
+					.inner-content__col
+						p.
+							Metaratings – это международное спортивное СМИ, имеющее
+							региональные версии сайта в США, Казахстане, Украине, Белоруссии, Узбекистане,
+							Таджикистане и России.
+						p.
+							Наши новости цитируют ведущие спортивные и общественно&#8209;политические
+							СМИ России, Украины, Казахстана, Белоруссии и других стран.
+					.inner-content__col
+						+pictureMobile("inner-content-1", "jpg")
+				.inner-content__row
+					.inner-content__col
+						+pictureMobile("inner-content-2", "jpg")
+						p.
+							Редакция Metaratings не аффилирована со спортивными федерациями,
+							клубами и частными лицами, поэтому на нашем сайте вы найдете объективную информацию,
+							которая не прошла через жернова многочисленных согласований.
+							Мы называем вещи своими именами.
+					.inner-content__col
+						+pictureMobile("inner-content-3", "jpg")
+			.block-license
+				.block-license__icon
+					+icon("emblem")
+				.block-license__text.
+					Свидетельство о регистрации СМИ серия ЭЛ № ФС77-74641 от 24 декабря
+					2018 года выдано Федеральной службой по надзору в сфере связи,
+					информационных технологий и массовых коммуникаций.
+			.our-products
+				h2.title.title--md.our-products__title Наши продукты
+				.our-products__slider
+					.swiper-container.js-products-slider
+						.swiper-wrapper
+							.swiper-slide.our-products__card
+								a.our-products__card-link(href="#")
+									span.our-products__card-icon
+										+icon("money")
+									span.our-products__card-name Рейтинг#[br]МФО
+							.swiper-slide.our-products__card
+								a.our-products__card-link(href="#")
+									span.our-products__card-icon
+										+icon("roulette")
+									span.our-products__card-name Рейтинг#[br]Онлайн Казино
+							.swiper-slide.our-products__card
+								a.our-products__card-link(href="#")
+									span.our-products__card-icon
+										+icon("play")
+									span.our-products__card-name Рейтинг#[br]Онлайн кинотеатров
+							.swiper-slide.our-products__card
+								a.our-products__card-link(href="#")
+									span.our-products__card-icon
+										+icon("chip")
+									span.our-products__card-name Рейтинг#[br]Лото
+							.swiper-slide.our-products__card
+								a.our-products__card-link(href="#")
+									span.our-products__card-icon
+										+icon("ball")
+									span.our-products__card-name USА версия#[br]рейтинг букмекеров
+					button.swiper-button-next(type="button")
+						+icon("arrow-right")
+					button.swiper-button-prev(type="button")
+						+icon("arrow-right")
+			.our-team
+				h2.title.title--md.our-team__title Наша команда
+				.our-team__list
+					-for(var i=0; i<21; i++)
+						.our-team__item
+							.our-team__item-img
+								+picture("team-" + (i+1), "jpg")
+							.our-team__item-cover
+								.our-team__item-name Artem
+								.our-team__item-post Full stack web developer
+					button.our-team__show-all.js-collapse-team(type="button")
+						+icon("arrow-down")
+						|Вся команда
+				.vacancies
+					.vacancies__header
+						h3.title.title--sm.vacancies__header-title Присоединяйтесь к Meta
+						a.vacancies__header-link(href="#") Все вакансии
+					.vacancies__slider
+						.swiper-container.js-vacancies-slider
+							.swiper-wrapper
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name Lead product designer
+										span.vacancies__item-salary 150 000 - 180 000 руб.
+										span.vacancies__item-city Москва
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name Senior PHP developer (Laravel)
+										span.vacancies__item-salary 120 000 - 160 000 руб.
+										span.vacancies__item-city Краснодар
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name PHP - разработчик (Symfony)
+										span.vacancies__item-salary 120 000 - 150 000 руб.
+										span.vacancies__item-city Краснодар
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name 1С Bitrix developer (Senior)
+										span.vacancies__item-salary 120 000 - 150 000 руб.
+										span.vacancies__item-city Краснодар
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name 1С Bitrix developer (Senior)
+										span.vacancies__item-salary 120 000 - 150 000 руб.
+										span.vacancies__item-city Краснодар
+								.swiper-slide.vacancies__item
+									a.vacancies__item-link(href="#")
+										span.vacancies__item-name PHP - разработчик (Symfony)
+										span.vacancies__item-salary 120 000 - 150 000 руб.
+										span.vacancies__item-city Краснодар
+						button.swiper-button-next(type="button")
+							+icon("arrow-right")
+						button.swiper-button-prev(type="button")
+							+icon("arrow-right")
+			.offices
+				.offices__row
+					.offices__col
+						h2.title.title--md.offices__title Наши офисы
+						.offices__card
+							.offices__card-title Москва
+							.offices__card-box
+								.offices__card-address
+									+icon("placeholder")
+									|ул. Бутлерова, 17, БЦ NEO GEO
+							.offices__card-box
+								a.offices__card-phone(href="tel:+79999994334")
+									+icon("phone")
+									|+7 999 999 43 34
+							.offices__card-box
+								a.offices__card-email(href="mailto:")
+									+icon("envelope")
+									| info@metaratings.ru
+					.offices__col
+						+picture("office-1", "jpg")
+					.offices__map
+						#map.map-container.ymap-container
+							#map-yandex.map-container__body
+				.offices__row.offices__row--reverse
+					.offices__col
+						+picture("office-2", "jpg")
+					.offices__col
+						.offices__card
+							.offices__card-title Краснодар
+							.offices__card-box
+								.offices__card-address
+									+icon("placeholder")
+									| ул. Красных Партизан 200
+							.offices__card-box
+								a.offices__card-phone(href="tel:+79999994334")
+									+icon("phone")
+									| +7 999 999 43 34
+							.offices__card-box
+								a.offices__card-email(href="mailto:")
+									+icon("envelope")
+									| info@metaratings.ru
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

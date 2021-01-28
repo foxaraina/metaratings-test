@@ -1,0 +1,23 @@
+.page-title {
+  font-size: rem(40);
+  font-weight: 700;
+  margin-bottom: 32px;
+  margin-top: 48px;
+  @include mq("tablet-small", "max") {
+    margin-top: 7px;
+  }
+}
+.title {
+  &.title--md {
+    font-size: rem(40);
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+  &.title--sm {
+    font-size: rem(30);
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+}

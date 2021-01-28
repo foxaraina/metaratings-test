@@ -1,0 +1,30 @@
+.icon {
+  width: 1em;
+  height: 1em;
+}
+.icon-close {
+  display: inline-block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  &:before {
+    content: "";
+    position: absolute;
+    transform: rotate(-45deg);
+    height: 1px;
+    width: 18px;
+    background: #000;
+    top: 8px;
+    left: -2px;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    transform: rotate(45deg);
+    height: 1px;
+    width: 18px;
+    background: #000;
+    top: 8px;
+    left: -2px;
+  }
+}
